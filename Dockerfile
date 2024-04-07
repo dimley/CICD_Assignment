@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python train.py
 
 # Define entry point
-CMD ["python", "test.py"]
+CMD ["python", "tes.py"]
