@@ -26,6 +26,7 @@ jobs:
         password: ${{ env.PASSWORD }}
 
     - name: Build and push Docker image
-      run: |
+      run: 
+        echo $env.USERNAME
         docker build . -t ${{ env.USERNAME }}/myimage:latest
         docker push ${{ env.USERNAME }}/myimage:latest
