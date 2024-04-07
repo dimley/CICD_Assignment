@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  USERNAME: dimley
+  PASSWORD: Hope@@2024
 
 jobs:
   test:
