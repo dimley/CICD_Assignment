@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,16 +18,16 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Pull Docker image
-      run: docker pull ${{ secrets.DOCKER_USERNAME }}/myimage:latest
+      run: docker pull ${{ env.USERNAME }}/myimage:latest
 
     - name: Run Docker container
-      run: docker run ${{ secrets.DOCKER_USERNAME }}/myimage:latest
+      run: docker run ${{ env.USERNAME }}/myimage:latest
 
     - name: Evaluate score
       run: |
         # Add code to evaluate the score returned by test.py
         # Example:
-        score=$(docker run ${{ secrets.DOCKER_USERNAME }}/myimage:latest python test.py)
+        score=$(docker run ${{ env.USERNAME }}/myimage:latest python test.py)
         if [ $(echo "$score > 0.60" | bc) -eq 1 ]; then
           echo "Test succeeded"
           exit 0
