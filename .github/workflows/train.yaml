@@ -7,7 +7,7 @@ on:
 
 env:
   USERNAME: dimley
-  PASSWORD: Hope@@2024
+  PASSWORD: Hope@@202
 
 jobs:
   train:
