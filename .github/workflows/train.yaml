@@ -50,7 +50,7 @@ jobs:
         # Add code to evaluate the score returned by test.py
         # Example:
         score=$(docker run ${{ env.USERNAME }}/myimage:latest)
-        if [ $(echo "$score > 0.30" | bc) -eq 1 ]; then
+        if [ $(echo "$score > 0.50" | bc) -eq 1 ]; then
           echo "Test succeeded"
           exit 0
         else
